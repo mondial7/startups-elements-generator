@@ -1,0 +1,162 @@
+<html lang="it">
+
+  <head>
+
+    <link href="./generator/assets/css/styles.css" rel="stylesheet" media="all" type="text/css" />
+
+    <title>Startups Elements</title>
+    <meta name="description" content="We are collection and categorising startup elements, metrics, information... help us in the project!" />
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <h1>Startups Elements</h1>
+
+    </header>
+
+    <section class="landing">
+
+      <div class="landing__box">
+        <div class="landing__box__icon landing__box__icon--generator"></div>
+        <p class="landing__box__text"><a href="#generator">Generator</a></p>
+      </div>
+
+      <div class="landing__box">
+        <div class="landing__box__icon landing__box__icon--validator"></div>
+        <p class="landing__box__text"><a href="#validator">Validator (To be developed)</a></p>
+      </div>
+
+    </section>
+
+    <section id="about">
+
+      <h3>Cannot wait to see your element!</h3>
+
+      <p>Here is an open source project you can find in <a href="">Startups Elements</a> github repository.</p>
+      <p>We aim to collect and categorize the elements of a startup.</p>
+
+    </section>
+
+    <section id="generator">
+
+      <h3>Generate your Element!</h3>
+
+      <p>Fill the form and copy the generated json & markdown code</p>
+
+      <div class="generator__box">
+
+        <div class="generator__form">
+
+          <div class="generator__field">
+            <label for="name">Name</label>
+            <input type="text" class="gen__input" id="name" />
+          </div>
+
+          <div class="generator__field">
+            <label for="label">Label</label>
+            <input type="text" class="gen__input" id="label" />
+          </div>
+
+          <div class="generator__field">
+            <label for="keywords">Keywords</label>
+            <input type="text" class="gen__input" id="keywords" />
+          </div>
+
+          <div class="generator__field">
+            <label for="about">About</label>
+            <textarea class="gen__input" id="about"></textarea>
+          </div>
+
+          <div class="generator__field">
+            <label for="contributors">Contributors</label>
+            <div class="gen__inputlist__wrapper" id="contributors">
+              <input type="text" class="gen__inputlist" id="contributor_name1" />
+              <input type="text" class="gen__inputlist" id="contributor_link1" />
+            </div>
+            <span class="gen__inputlist__button_more" onclick="addContributorField()"></span>
+          </div>
+
+          <div class="generator__field">
+            <label for="dependencies">Dependencies</label>
+            <div class="gen__inputlist__wrapper" id="dependencies">
+              <input type="text" class="gen__inputlist" id="dependency_name1" />
+              <input type="text" class="gen__inputlist" id="dependency_link1" />
+            </div>
+            <span class="gen__inputlist__button_more" onclick="addDependencyField()"></span>
+          </div>
+
+          <div class="generator__field">
+            <label for="categories">Categories</label>
+            <input type="checkbox" class="gen__input gen__input--category" value="team">Team</input>
+            <input type="checkbox" class="gen__input gen__input--category" value="product">Product</input>
+            <input type="checkbox" class="gen__input gen__input--category" value="business">Market/Business</input>
+            <input type="checkbox" class="gen__input gen__input--category" value="finance">Finance</input>
+          </div>
+
+          <div class="generator__field">
+            <label for="stages">Stages</label>
+            <input type="checkbox" class="gen__input gen__input--stage" value="formation">Formation (Ideating, Concepting)</input>
+            <input type="checkbox" class="gen__input gen__input--stage" value="validation">Validation (Committing, Validating)</input>
+            <input type="checkbox" class="gen__input gen__input--stage" value="growth">Growth (Scaling, Establishing)</input>
+          </div>
+
+          <div class="generator__field">
+            <label for="business">Business Model</label>
+            <input type="text" class="gen__input" id="business" />
+          </div>
+
+          <div class="generator__field">
+            <label for="casestudies">About</label>
+            <div class="gen__inputlist__wrapper" id="casestudies">
+              <textarea class="gen__input" id="case1"></textarea>
+            </div>
+            <span class="gen__inputlist__button_more" onclick="addCasestudyField()"></span>
+          </div>
+
+          <div class="generator__field">
+            <label for="related">Related Elements</label>
+            <div class="gen__inputlist__wrapper" id="related">
+              <input type="text" class="gen__inputlist" id="related_name1" />
+              <input type="text" class="gen__inputlist" id="related_link1" />
+            </div>
+            <span class="gen__inputlist__button_more" onclick="addRelatedField()"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="generator__box">
+
+        <h4>Json Output</h4>
+        <p>Copy and paste on a file named: <span id="generator__json_filename">your-element.json</span></p>
+        <textarea id="generator__json_textarea"></textarea>
+
+      </div>
+
+      <div class="generator__box">
+
+        <h4>Markdown Output</h4>
+        <p>Copy and paste on a file named: <span id="generator__md_filename">your-element.md</span></p>
+        <textarea id="generator__md_textarea"></textarea>
+
+      </div>
+
+    <section>
+
+    <section id="validator">
+
+      <!-- Need to find some time to code it -->
+
+    <section>
+
+    <footer>
+      <p>We appreciate you are here :)</p>
+    </footer>
+
+  </body>
+
+</html>
