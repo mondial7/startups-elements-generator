@@ -2,7 +2,14 @@
 
   <head>
 
-    <link href="./generator/assets/css/styles.css" rel="stylesheet" media="all" type="text/css" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Startups Elements</title>
     <meta name="description" content="We are collection and categorising startup elements, metrics, information... help us in the project!" />
@@ -13,148 +20,241 @@
 
     <header>
 
-      <h1>Startups Elements</h1>
+      <div class="container">
+
+        <nav>
+          <div class="nav-wrapper teal lighten-2-">
+            <ul class="right hide-on-med-and-down">
+              <li><a href="https://github.com/mondial7/startups-elements"><i class="material-icons left">launch</i>Elements</a></li>
+              <li><a href="https://github.com/mondial7/startups-elements-generator"><i class="material-icons left">launch</i>Github</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <h1>Startups Elements</h1>
+
+      </div>
 
     </header>
 
-    <section class="landing">
+    <main>
 
-      <div class="landing__box">
-        <div class="landing__box__icon landing__box__icon--generator"></div>
-        <p class="landing__box__text"><a href="#generator">Generator</a></p>
+      <div class="container">
+
+        <!--
+
+        <section class="landing">
+
+          <div class="raw">
+
+            <p class="col s6"><a href="#generator" class="btn waves-effect waves-light">Generator</a></p>
+
+            <p class="col s6"><a href="#validator" class="btn waves-effect">Validator</a> (To be developed)</p>
+
+          </div>
+
+        </section>
+
+        -->
+
+        <section class="about">
+
+          <p>Open source project you can find in <a href="https://github.com/mondial7/startups-elements" target="_blank">Startups Elements</a> github repository.</p>
+          <p>We aim to collect and categorize the elements of a startup.</p>
+
+        </section>
+
+        <section id="generator">
+
+          <h3>Generate your Element!</h3>
+
+          <p>Fill the form and copy the generated json & markdown code</p>
+
+          <div class="generator__box">
+
+            <div class="card-panel">
+              <h4>Element Description</h4>
+              <div class="col s12">
+
+                <div class="row">
+                  <div class="input-field col s6">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" />
+                  </div>
+                  <div class="input-field col s6">
+                    <label for="label">Label</label>
+                    <input type="text" id="label" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s6">
+                    <label for="keywords">Keywords (separate with comma)</label>
+                    <input type="text" id="keywords" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label for="about">About</label>
+                    <textarea class="materialize-textarea" id="about"></textarea>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-panel">
+              <h4>Contributors</h4>
+              <div id="contributors" class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input type="text" id="contributor_name1" />
+                    <label for="contributor_name1">Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input type="url" class="gen__inputlist" id="contributor_link1" />
+                    <label for="contributor_link1">Link</label>
+                  </div>
+                </div>
+              </div>
+              <span class="btn waves-effect waves-teal" onclick="addContributorField()">Add one more field</span>
+            </div>
+
+            <div class="card-panel">
+              <h4>Dependencies</h4>
+              <div id="dependencies" class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input type="text" id="dependency_name1" />
+                    <label for="dependency_name1">Label</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input type="url" id="dependency_link1" />
+                    <label for="dependency_link1">Link</label>
+                  </div>
+                </div>
+              </div>
+              <span class="btn waves-effect waves-teal" onclick="addDependencyField()">Add one more field</span>
+            </div>
+
+            <div class="card-panel">
+              <h4>Categories</h4>
+              <div id="categories">
+                <input type="checkbox" id="cat_team" class="filled-in" value="team" />
+                <label for="cat_team">Team</label> <br />
+                <input type="checkbox" id="cat_product" class="filled-in" value="product" />
+                <label for="cat_product">Product</label> <br />
+                <input type="checkbox" id="cat_business" class="filled-in" value="business" />
+                <label for="cat_business">Market/Business</label> <br />
+                <input type="checkbox" id="cat_finance" class="filled-in" value="finance" />
+                <label for="cat_finance">Finance</label>
+              </div>
+            </div>
+
+            <div class="card-panel">
+              <h4>Stages</h4>
+              <div id="stages">
+                <input type="checkbox" id="stage_formation" class="filled-in" value="formation" />
+                <label for="stage_formation">Formation (Ideating, Concepting)</label> <br />
+                <input type="checkbox" id="stage_validation" class="filled-in" value="validation" />
+                <label for="stage_validation">Validation (Committing, Validating)</label> <br />
+                <input type="checkbox" id="stage_growth" class="filled-in" value="growth" />
+                <label for="stage_growth">Growth (Scaling, Establishing)</label>
+              </div>
+            </div>
+
+            <div class="card-panel">
+              <h4>Business Model</h4>
+              <div id="business" class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input type="text" id="business1" />
+                    <label for="business1">Business Model</label>
+                  </div>
+                </div>
+              </div>
+              <span class="btn waves-effect waves-teal" onclick="addBusinessField()">Add one more field</span>
+            </div>
+
+            <div class="card-panel">
+              <h4>Case Studies</h4>
+              <div id="casestudies" class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <textarea id="case1" class="materialize-textarea"></textarea>
+                    <label for="case1">Case Study</label>
+                  </div>
+                </div>
+              </div>
+              <span class="btn waves-effect waves-teal" onclick="addCasestudyField()">Add one more field</span>
+            </div>
+
+            <div class="card-panel">
+              <h4>Related Elements</h4>
+              <div id="related">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input type="text" id="related_name1" />
+                    <label for="related_name1">Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input type="url" id="related_link1" />
+                    <label for="related_link1">Link</label>
+                  </div>
+                </div>
+              </div>
+              <span class="btn waves-effect waves-teal" onclick="addRelatedField()">Add one more field</span>
+            </div>
+
+          </div>
+
+          <div class="generator__box card-panel">
+
+            <h4>Json Output</h4>
+            <p>Copy and paste on a file named: <span id="generator__json_filename">your-element.json</span></p>
+            <textarea id="generator__json_textarea" class="materialize-textarea"></textarea>
+
+          </div>
+
+          <div class="generator__box card-panel">
+
+            <h4>Markdown Output</h4>
+            <p>Copy and paste on a file named: <span id="generator__md_filename">your-element.md</span></p>
+            <textarea id="generator__md_textarea" class="materialize-textarea"></textarea>
+
+          </div>
+
+        <section>
+
+        <section id="validator">
+
+          <!-- Need to find some time to code it -->
+
+        <section>
+
       </div>
 
-      <div class="landing__box">
-        <div class="landing__box__icon landing__box__icon--validator"></div>
-        <p class="landing__box__text"><a href="#validator">Validator (To be developed)</a></p>
+    </main>
+
+    <footer class="page-footer container teal lighten-2">
+
+      <div class="row">
+        <div class="col s12">
+          <h3 class="white-text center-align">Have a great day !</h3>
+        </div>
       </div>
 
-    </section>
+      <div class="footer-copyright">
 
-    <section id="about">
+        <div class="container">
 
-      <h3>Cannot wait to see your element!</h3>
-
-      <p>Here is an open source project you can find in <a href="">Startups Elements</a> github repository.</p>
-      <p>We aim to collect and categorize the elements of a startup.</p>
-
-    </section>
-
-    <section id="generator">
-
-      <h3>Generate your Element!</h3>
-
-      <p>Fill the form and copy the generated json & markdown code</p>
-
-      <div class="generator__box">
-
-        <div class="generator__form">
-
-          <div class="generator__field">
-            <label for="name">Name</label>
-            <input type="text" class="gen__input" id="name" />
-          </div>
-
-          <div class="generator__field">
-            <label for="label">Label</label>
-            <input type="text" class="gen__input" id="label" />
-          </div>
-
-          <div class="generator__field">
-            <label for="keywords">Keywords</label>
-            <input type="text" class="gen__input" id="keywords" />
-          </div>
-
-          <div class="generator__field">
-            <label for="about">About</label>
-            <textarea class="gen__input" id="about"></textarea>
-          </div>
-
-          <div class="generator__field">
-            <label for="contributors">Contributors</label>
-            <div class="gen__inputlist__wrapper" id="contributors">
-              <input type="text" class="gen__inputlist" id="contributor_name1" />
-              <input type="text" class="gen__inputlist" id="contributor_link1" />
-            </div>
-            <span class="gen__inputlist__button_more" onclick="addContributorField()"></span>
-          </div>
-
-          <div class="generator__field">
-            <label for="dependencies">Dependencies</label>
-            <div class="gen__inputlist__wrapper" id="dependencies">
-              <input type="text" class="gen__inputlist" id="dependency_name1" />
-              <input type="text" class="gen__inputlist" id="dependency_link1" />
-            </div>
-            <span class="gen__inputlist__button_more" onclick="addDependencyField()"></span>
-          </div>
-
-          <div class="generator__field">
-            <label for="categories">Categories</label>
-            <input type="checkbox" class="gen__input gen__input--category" value="team">Team</input>
-            <input type="checkbox" class="gen__input gen__input--category" value="product">Product</input>
-            <input type="checkbox" class="gen__input gen__input--category" value="business">Market/Business</input>
-            <input type="checkbox" class="gen__input gen__input--category" value="finance">Finance</input>
-          </div>
-
-          <div class="generator__field">
-            <label for="stages">Stages</label>
-            <input type="checkbox" class="gen__input gen__input--stage" value="formation">Formation (Ideating, Concepting)</input>
-            <input type="checkbox" class="gen__input gen__input--stage" value="validation">Validation (Committing, Validating)</input>
-            <input type="checkbox" class="gen__input gen__input--stage" value="growth">Growth (Scaling, Establishing)</input>
-          </div>
-
-          <div class="generator__field">
-            <label for="business">Business Model</label>
-            <input type="text" class="gen__input" id="business" />
-          </div>
-
-          <div class="generator__field">
-            <label for="casestudies">About</label>
-            <div class="gen__inputlist__wrapper" id="casestudies">
-              <textarea class="gen__input" id="case1"></textarea>
-            </div>
-            <span class="gen__inputlist__button_more" onclick="addCasestudyField()"></span>
-          </div>
-
-          <div class="generator__field">
-            <label for="related">Related Elements</label>
-            <div class="gen__inputlist__wrapper" id="related">
-              <input type="text" class="gen__inputlist" id="related_name1" />
-              <input type="text" class="gen__inputlist" id="related_link1" />
-            </div>
-            <span class="gen__inputlist__button_more" onclick="addRelatedField()"></span>
-          </div>
+          <p class="center"><a class="grey-text text-lighten-4" href="https://github.com/mondial7/startups-elements-generator">Clone this on Github</a></p>
 
         </div>
 
       </div>
 
-      <div class="generator__box">
-
-        <h4>Json Output</h4>
-        <p>Copy and paste on a file named: <span id="generator__json_filename">your-element.json</span></p>
-        <textarea id="generator__json_textarea"></textarea>
-
-      </div>
-
-      <div class="generator__box">
-
-        <h4>Markdown Output</h4>
-        <p>Copy and paste on a file named: <span id="generator__md_filename">your-element.md</span></p>
-        <textarea id="generator__md_textarea"></textarea>
-
-      </div>
-
-    <section>
-
-    <section id="validator">
-
-      <!-- Need to find some time to code it -->
-
-    <section>
-
-    <footer>
-      <p>We appreciate you are here :)</p>
     </footer>
 
   </body>
